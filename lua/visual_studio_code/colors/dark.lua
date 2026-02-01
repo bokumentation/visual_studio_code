@@ -25,7 +25,7 @@ return {
     __vscode_variable = "#D4D4D4",
     __vscode_keyword = "#569CD6",
     __vscode_strings = "#CE9178",
-    __vscode_comment = "#6A9955",
+    __vscode_comment = "#7b7b7b",
     __vscode_methods = "#DCDCAA",
     __vscode_type = "#4EC9B0",
     __vscode_file = "#9CDCFE",
