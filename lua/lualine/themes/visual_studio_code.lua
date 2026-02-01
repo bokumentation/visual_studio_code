@@ -1,24 +1,41 @@
-local colors = {}
+local colors = {
+    white      = "#FFFFFF",
+    blue       = "#007ACC", -- VS Code Blue
+    green      = "#2C896B", -- Your Header Green
+    dark_grey  = "#202020",
+    orange     = "#D7BA7D", -- VS Code "Warning" color
+    purple     = "#C586C0", -- VS Code "Keyword" color
+}
 
-colors.foreground = "#FFFFFF"
-colors.background = "#007ACC"
-colors.header_background = "#2C896B"
+-- Base configuration (Normal Mode)
+local normal_colors = {
+    a = { fg = colors.white, bg = colors.green, gui = "bold" },
+    b = { fg = colors.white, bg = colors.blue },
+    c = { fg = colors.white, bg = colors.blue },
+    x = { fg = colors.white, bg = colors.blue },
+    y = { fg = colors.white, bg = colors.blue },
+    z = { fg = colors.white, bg = colors.blue },
+}
 
-local component_colors = {
-    a = { fg = colors.foreground, bg = colors.header_background },
-    b = { fg = colors.foreground, bg = colors.background },
-    c = { fg = colors.foreground, bg = colors.background },
+-- Derived: Insert Mode (Let's make it look like "Boku Design Labs" branding or different)
+local insert_colors = {
+    a = { fg = colors.white, bg = "#0E639C" }, -- A different blue for insert
+    b = normal_colors.b,
+    c = normal_colors.c,
+}
 
-    x = { fg = colors.foreground, bg = colors.background },
-    y = { fg = colors.foreground, bg = colors.background },
-    z = { fg = colors.foreground, bg = colors.background },
+-- Derived: Visual Mode (Crucial for not getting lost while selecting code)
+local visual_colors = {
+    a = { fg = colors.dark_grey, bg = colors.orange }, -- High contrast yellow/orange
+    b = normal_colors.b,
+    c = normal_colors.c,
 }
 
 return {
-    normal = component_colors,
-    insert = component_colors,
-    visual = component_colors,
-    replace = component_colors,
-    command = component_colors,
-    inactive = component_colors,
+    normal   = normal_colors,
+    insert   = insert_colors,
+    visual   = visual_colors,
+    replace  = normal_colors, -- You can add a red here later
+    command  = normal_colors,
+    inactive = normal_colors,
 }
