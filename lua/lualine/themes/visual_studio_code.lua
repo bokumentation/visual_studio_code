@@ -1,6 +1,6 @@
 local colors = {
     white      = "#FFFFFF",
-    blue       = "#007ACC", -- VS Code Blue
+    blue       = "#202020", -- VS Code Blue
     green      = "#2C896B", -- Your Header Green
     dark_grey  = "#202020",
     orange     = "#D7BA7D", -- VS Code "Warning" color
